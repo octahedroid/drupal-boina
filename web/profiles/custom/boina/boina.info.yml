@@ -1,0 +1,61 @@
+name: 'Drupal Boina'
+type: profile
+description: 'The Boina Profile to use with the Gatsby Boina Starter.'
+version: VERSION
+core: 8.x
+install:
+  - admin_toolbar
+  - admin_toolbar_tools
+  - adminimal_admin_toolbar
+  - block
+  - block_content
+  - breakpoint
+  - build_hooks
+  - config
+  - ctools
+  - datetime
+  - dblog
+  - dynamic_page_cache
+  - editor
+  - field
+  - field_group
+  - field_ui
+  - file
+  - filter
+  - help
+  - image
+  - jsonapi
+  - jsonapi_extras
+  - link
+  - markdown
+  - media
+  - media_library
+  - menu_ui
+  - node
+  - options
+  - page_cache
+  - path
+  - rdf
+  - serialization
+  - shortcut
+  - site_settings
+  - subpathauto
+  - system
+  - taxonomy
+  - text
+  - token
+  - toolbar
+  - tui_editor
+  - update
+  - user
+  - views_ui
+  - menu_link_content
+  - pathauto
+  - views
+  - yaml_content
+themes:
+  - stable
+  - classy
+  - seven
+  - bartik
+  - adminimal_theme

@@ -1,0 +1,68 @@
+version: "2.3"
+
+services:
+  mariadb:
+    image: wodby/mariadb:10.2-3.1.3
+    env_file: ./.env
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 'true'
+      MYSQL_DATABASE: ${DATABASE_NAME}
+      MYSQL_USER: ${DATABASE_USER}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+    # ports:
+    #   - '3306:3306'
+    volumes:
+      - mariadb:/var/lib/mysql
+      # Place init .sql file(s) here
+      - ./mariadb-init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  php:
+    image: wodby/drupal-php:7.2-4.7.5
+    env_file: ./.env
+    environment:
+      PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog:1025
+      ENVIRONMENT: ${ENVIRONMENT}
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USER: ${DATABASE_USER}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_HOST: ${DATABASE_HOST}
+    volumes:
+      - ./:${DRUPAL_ROOT}:delegated
+    depends_on:
+      mariadb:
+        condition: service_healthy
+
+  nginx:
+    image: wodby/drupal-nginx:8-1.13-4.0.3
+    env_file: ./.env
+    depends_on:
+      - php
+    environment:
+      NGINX_STATIC_CONTENT_OPEN_FILE_CACHE: "off"
+      NGINX_ERROR_LOG_LEVEL: debug
+      NGINX_BACKEND_HOST: php
+      NGINX_SERVER_ROOT: ${SERVER_ROOT}
+    volumes:
+      - ./:${DRUPAL_ROOT}:delegated
+    labels:
+      - 'traefik.backend=nginx'
+      - 'traefik.port=80'
+      - 'traefik.frontend.rule=Host:${URL_SITE}'
+
+  traefik:
+    image: traefik
+    env_file: ./.env
+    command: -c /dev/null --web --docker --logLevel=INFO
+    ports:
+      - '80:80'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  mariadb:
+    driver: "local"

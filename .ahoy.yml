@@ -1,0 +1,49 @@
+ahoyapi: v2
+commands:
+  ps:
+    cmd: docker-compose ps "$@"
+    usage: List containers.
+
+  start:
+    cmd: docker-compose start "$@"
+    usage: Start services.
+
+  stop:
+    cmd: docker-compose stop "$@"
+    usage: Stop services.
+
+  restart:
+    cmd: docker-compose restart "$@"
+    usage: Restart services.
+
+  up:
+    cmd: docker-compose up -d "$@"
+    usage: Create and start containers.
+
+  down:
+    cmd: docker-compose down "$@"
+    usage: Stop and remove containers, networks, images, and volumes.
+
+  composer:
+    cmd: docker-compose exec --user=wodby php composer "$@"
+    usage: Run Composer commands in the php service container.
+
+  drupal:
+    cmd: docker-compose exec --user=wodby php vendor/bin/drupal "$@"
+    usage: Run Drupal Console commands in the php service container.
+
+  drush:
+    cmd: docker-compose exec --user=wodby php vendor/bin/drush "$@"
+    usage: Run Drush commands in the php service container.
+
+  bash:
+    cmd: docker-compose exec --user=wodby php bash
+    usage: Run bash into php service container.
+
+  logs:
+    cmd: docker-compose logs -f "$@"
+    usage: Show logs
+
+  destroy:
+    cmd: docker-compose down -v
+    usage: Stop and remove containers, networks, images, and destroy volumes.

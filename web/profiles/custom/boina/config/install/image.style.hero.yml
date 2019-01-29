@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: hero
+label: 'Hero (1800 x 900)'
+effects:
+  20e34815-99c1-463f-a9b4-272a6a7caba5:
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1800
+      height: 900
+      anchor: center-center

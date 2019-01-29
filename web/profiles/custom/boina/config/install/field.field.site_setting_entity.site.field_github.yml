@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_github
+    - site_settings.site_setting_entity_type.site
+  module:
+    - link
+id: site_setting_entity.site.field_github
+field_name: field_github
+entity_type: site_setting_entity
+bundle: site
+label: Github
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

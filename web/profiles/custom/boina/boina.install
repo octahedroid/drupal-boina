@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall hooks for the boina install profile.
+ */
+
+const YAML_CONTENT_DIRECTORY = '/yaml_content';
+
+/**
+ * Implements hook_install().
+ *
+ * @see system_install()
+ */
+function boina_install() {
+  $path = \Drupal::service('module_handler')
+    ->getModule('boina')->getPath() . YAML_CONTENT_DIRECTORY;
+  \Drupal::service('yaml_content.content_loader')
+    ->setContentPath($path);
+  $service = \Drupal::service('yaml_content.content_loader');
+  $service->loadContent('site_setting_entity.yml');
+  $service->loadContent('taxonomy_term.yml');
+  $service->loadContent('node.yml');
+}

@@ -1,0 +1,34 @@
+application:
+  environment: 'prod'
+  language: 'en'
+#  editor: 'vim'
+  temp: '/tmp'
+  develop: 'false'
+  command: 'list'
+  checked: 'false'
+  clear: 'false'
+  extras:
+    alias: 'true'
+    extend: 'true'
+    config: 'true'
+    chains: 'true'
+    mappings: 'true'
+  remote:
+    port: '22'
+    user: 'drupal'
+    type: 'ssh'
+  overrides:
+    config:
+      skip-validate-site-uuid: true
+  options:
+    learning: false
+#    target: 'site-alias.dev'
+    generate-inline: false
+    generate-chain: false
+#  default:
+#    commands:
+#      config:
+#        export:
+#          options:
+#            remove-uuid: true
+#            remove-config-hash: true

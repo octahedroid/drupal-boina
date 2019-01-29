@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: related_blog
+label: 'Related blog (300 x 100)'
+effects:
+  070f187f-b429-4777-9e87-a3116dbc4598:
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 100
+      anchor: center-center

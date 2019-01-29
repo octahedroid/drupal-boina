@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_overlay_color
+field_name: field_overlay_color
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: red
+      label: Red
+    -
+      value: purple
+      label: Purple
+    -
+      value: blue
+      label: Blue
+    -
+      value: orange
+      label: Orange
+    -
+      value: red-purple-diagonal
+      label: 'Red - Purple (Diagonal)'
+    -
+      value: orange-red-diagonal
+      label: 'Orange - Red (Diagonal)'
+    -
+      value: blue-red-diagonal
+      label: 'Blue - Red (Diagonal)'
+    -
+      value: purple-blue
+      label: 'Purple - Blue'
+    -
+      value: red-orange
+      label: 'Red - Orange'
+    -
+      value: blue-orange
+      label: 'Blue - Orange'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

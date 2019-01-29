@@ -1,0 +1,193 @@
+# Basic Pages
+- entity: "node"
+  type: "page"
+  title: "About"
+  status: 1
+  body:
+    - format: "full_html"
+      value: |
+        Drupal 8 has plenty of contributed modules to help you building a headless/decoupled web application. However, getting all the those setup correctly can be a daunting task.
+
+        The Drupal Boina Distribution, comes with everything you need (code, configuration and even default content), all that will be added to your site during the installation process so you can start working with the Boina Gatsby Starter immediately.
+  field_image:
+    - entity: media
+      bundle: image
+      name: 'Demo Image'
+      status: 1
+      field_media_image:
+        - '#process':
+            callback: 'file'
+            args:
+              - 'image'
+              - filename: 'drupal-loves-gatsby-white-1.jpg'
+          alt: 'Demo Image Page'
+
+# Articles
+- entity: "node"
+  type: "article"
+  title: "gatsby-remark-twitter"
+  status: 1
+  body:
+    - format: "full_html"
+      value: |
+        # gatsby-remark-twitter
+
+        Embed Tweet cards in Gatsby markdown.
+
+        ## Install
+
+        ```bash
+        npm install --save @weknow/gatsby-remark-twitter
+        ```
+
+        ## How to use
+
+        ```js
+        // In your gatsby-config.js
+        plugins: [
+          {
+            resolve: "gatsby-transformer-remark",
+            options: {
+              plugins: ["@weknow/gatsby-remark-twitter"]
+            }
+          }
+        ];
+        ```
+
+        If you want to get debug output, turn on the `debug` option in the
+        plugin options.
+
+        ```js
+        // In your gatsby-config.js
+        plugins: [
+          {
+            resolve: "gatsby-transformer-remark",
+            options: {
+              plugins: [
+                {
+                  resolve: "@weknow/gatsby-remark-twitter",
+                  options: {
+                    debug: true
+                  }
+                }
+              ]
+            }
+          }
+        ];
+        ```
+
+        ## Usage
+
+        ```markdown
+        # Blog post title
+
+        This is an example of embedding a single tweet card.
+        Add any markdown as you normally do, and then insert a valid
+        Tweet link anywhere to automatically transform it into an
+        embed card.
+
+        https://twitter.com/gatsbyjs/status/1055939617646465024
+
+        You can embed several tweets
+
+        https://twitter.com/wesbos/status/1068597847237541888
+
+        https://twitter.com/dan_abramov/status/1068884262273933312
+
+        ```
+
+        > __NOTE:__ Make sure to copy the Tweet link instead of the embed code.
+
+        ## How this looks like
+        You can embed a single tweet
+
+        https://twitter.com/gatsbyjs/status/1055939617646465024
+
+        You can embed several tweets
+
+        https://twitter.com/wesbos/status/1068597847237541888
+
+        https://twitter.com/dan_abramov/status/1068884262273933312
+
+  field_image:
+    - entity: media
+      bundle: image
+      name: 'Demo Image'
+      status: 1
+      field_media_image:
+        - '#process':
+            callback: 'file'
+            args:
+              - 'image'
+              - filename: 'drupal-love-gatsby-blue.jpg'
+          alt: 'Demo Image Article'
+  field_tags:
+    - '#process':
+        callback: 'reference'
+        args:
+          - 'taxonomy_term'
+          - vid: 'tags'
+            name: 'drupal'
+    - '#process':
+        callback: 'reference'
+        args:
+          - 'taxonomy_term'
+          - vid: 'tags'
+            name: 'gatsby'
+
+- entity: "node"
+  type: "article"
+  title: "Getting Started"
+  status: 1
+  body:
+    - format: "full_html"
+      value: |
+        # Getting Started
+        At weKnow we have been using Gatsby with Drupal for projects as our decouple strategy lately, and after building a few sites with Drupal and Gatsby we found some challenges, which we resolved writing custom code. But now we’ve decided to share and contribute our knowledge releasing the following projects.
+
+        ### Drupal
+        - Toast UI Editor (module)
+        - Build Hooks (module)
+        - Drupal Boina (distribution + installation profile)
+
+        ### Gatsby
+        - gatsby-remark-drupal (plugin)
+        - gatsby-remark-twitter (plugin)
+        - gatsby-remark-codepen (plugin)
+        - gatsby-remark-twitch (plugin)
+        - gatsby-starter-drupal-boina (starter)
+        - gatsby-theme-drupal-boina (theme)
+
+  field_image:
+    - entity: media
+      bundle: image
+      name: 'Demo Image'
+      status: 1
+      field_media_image:
+        - '#process':
+            callback: 'file'
+            args:
+              - 'image'
+              - filename: 'gatsby-loves-drupal.jpg'
+          alt: 'Demo Image Article'
+  field_tags:
+    - '#process':
+        callback: 'reference'
+        args:
+          - 'taxonomy_term'
+          - vid: 'tags'
+            name: 'drupal'
+    - '#process':
+        callback: 'reference'
+        args:
+          - 'taxonomy_term'
+          - vid: 'tags'
+            name: 'gatsby'
+  field_related_post:
+    - target_type: 'node'
+      '#process':
+        callback: 'reference'
+        args:
+          - 'node'
+          - type: 'article'
+            title: 'gatsby-remark-twitter'

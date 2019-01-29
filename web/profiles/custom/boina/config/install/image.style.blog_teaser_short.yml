@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: blog_teaser_short
+label: 'Blog Teaser Short (600 x 400)'
+effects:
+  283a4ed1-d17b-4a91-aa9b-d2145471811a:
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 400
+      anchor: center-center

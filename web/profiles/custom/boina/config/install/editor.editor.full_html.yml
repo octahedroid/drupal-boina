@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - tui_editor
+format: full_html
+editor: tui_editor
+settings:
+  saveHTMLToTextarea: 0
+image_upload: {  }

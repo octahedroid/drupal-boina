@@ -1,0 +1,14 @@
+command:
+  name:  boina:install
+  description: 'Install Drupal Boina Distribution'
+commands:
+  # Install Site
+  - command: 'site:install'
+    options:
+        force: true
+    arguments:
+        profile: boina
+  # Rebuild caches
+  - command: cache:rebuild
+    arguments:
+        cache: all

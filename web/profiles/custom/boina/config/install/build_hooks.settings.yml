@@ -1,0 +1,10 @@
+build_hook: ''
+messages:
+  log: 0
+  show: 0
+triggers:
+  cron: 0
+  menu: 0
+  node:
+    article: 0
+    page: 0

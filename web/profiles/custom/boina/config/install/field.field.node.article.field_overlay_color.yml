@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_overlay_color
+    - node.type.article
+  module:
+    - options
+id: node.article.field_overlay_color
+field_name: field_overlay_color
+entity_type: node
+bundle: article
+label: 'Overlay Color'
+description: 'Please select a overlay color which will apply a tint to the background image.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

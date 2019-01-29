@@ -1,0 +1,6 @@
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "drupal"
+- entity: "taxonomy_term"
+  vid: "tags"
+  name: "gatsby"
