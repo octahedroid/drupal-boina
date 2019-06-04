@@ -26,7 +26,7 @@
         "drupal/console": "^1.0.2",
         "drupal/core": "~8.6",
         "drupal/ctools": "^3.0",
-        "drupal/field_group": "^1.0",
+        "drupal/field_group": "^3.0",
         "drupal/jsonapi": "^2.0",
         "drupal/jsonapi_extras": "^3.2",
         "drupal/markdown": "^1.2",
