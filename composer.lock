@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "645d58ee0da678aeb7f0c0d5af7d0b7c",
+    "content-hash": "3271c23b9d3c470536d59f68285090d1",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2801,6 +2801,62 @@
             }
         },
         {
+            "name": "drupal/gatsby",
+            "version": "1.0.0-alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/gatsby.git",
+                "reference": "8.x-1.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/gatsby-8.x-1.0-alpha1.zip",
+                "reference": "8.x-1.0-alpha1",
+                "shasum": "087e33c2d03b5a1e29e2d22641233bb79e372fe5"
+            },
+            "require": {
+                "drupal/core": "~8.0",
+                "drupal/jsonapi": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha1",
+                    "datestamp": "1559929385",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "codekarate",
+                    "homepage": "https://www.drupal.org/user/506260"
+                },
+                {
+                    "name": "mrjmd",
+                    "homepage": "https://www.drupal.org/user/1800446"
+                }
+            ],
+            "description": "Enables Live Preview for Gatsby",
+            "homepage": "https://www.drupal.org/project/gatsby",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/gatsby",
+                "issues": "https://www.drupal.org/project/issues/gatsby"
+            }
+        },
+        {
             "name": "drupal/jsonapi",
             "version": "2.4.0",
             "source": {
@@ -2829,7 +2885,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.4",
-                    "datestamp": "1553177584",
+                    "datestamp": "1553554702",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2861,7 +2917,7 @@
             "description": "Provides a JSON API standards-compliant API for accessing and manipulating Drupal content and configuration entities.",
             "homepage": "https://www.drupal.org/project/jsonapi",
             "support": {
-                "source": "http://cgit.drupalcode.org/jsonapi"
+                "source": "https://git.drupalcode.org/project/jsonapi"
             }
         },
         {
@@ -8623,6 +8679,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "drupal/gatsby": 15,
         "drupal/subpathauto": 5
     },
     "prefer-stable": true,

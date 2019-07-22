@@ -27,6 +27,7 @@
         "drupal/core": "~8.6",
         "drupal/ctools": "^3.0",
         "drupal/field_group": "^3.0",
+        "drupal/gatsby": "^1.0@alpha",
         "drupal/jsonapi": "^2.0",
         "drupal/jsonapi_extras": "^3.2",
         "drupal/markdown": "^1.2",
