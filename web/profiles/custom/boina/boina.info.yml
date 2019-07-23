@@ -22,6 +22,7 @@ install:
   - field_ui
   - file
   - filter
+  - gatsby
   - help
   - image
   - jsonapi
