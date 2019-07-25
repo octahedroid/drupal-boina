@@ -40,4 +40,3 @@ ahoy composer install
 ```
 ahoy drupal boina:install
 ```
-```
