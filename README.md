@@ -10,22 +10,34 @@ The Drupal Boina Distribution, comes with everything you need (code, configurati
 * [ahoy (ver 2)](https://github.com/ahoy-cli/ahoy)
 
 ## Project setup
+
+### Clone repository
 ```
-# Clone repository
 git clone git@github.com:weknowinc/drupal-boina.git
+```
 
-# Copy .env file
+### Copy .env file
+```
 cp .env.dist .env
+```
 
-# Add hostname entry in your /etc/hosts file
+### Add hostname entry in your /etc/hosts file
+```
 127.0.0.1    drupal-boina.develop
+```
 
-# Start containers
+### Start containers
+```
 ahoy up
+```
 
-# Install Composer dependencies
+### Install Composer dependencies
+```
 ahoy composer install
+```
 
-# Install Boina distribution
+### Install Boina distribution
+```
 ahoy drupal boina:install
+```
 ```
