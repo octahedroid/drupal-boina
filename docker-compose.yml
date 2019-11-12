@@ -55,7 +55,7 @@ services:
       - 'traefik.frontend.rule=Host:${URL_SITE}'
 
   traefik:
-    image: traefik
+    image: traefik:v1.7
     env_file: ./.env
     command: -c /dev/null --web --docker --logLevel=INFO
     ports:
